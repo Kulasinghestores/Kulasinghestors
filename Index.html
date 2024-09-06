@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Kulasinghe Stores - Online Grocery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: red;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        section {
+            padding: 20px;
+            margin: 20px 0;
+            background-color: #fff;
+            border-radius: 8px;
+        }
+        section h2 {
+            color: red;
+        }
+        .product-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
+        }
+        .product {
+            background-color: #fff;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .product img {
+            width: 100%;
+            height: auto;
+            border-bottom: 1px solid #ddd;
+        }
+        .product h3 {
+            color: red;
+        }
+        footer {
+            background-color: red;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .total-price {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Kulasinghe Stores</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <section id="home">
+            <h2>Welcome to Kulasinghe Stores</h2>
+            <p>Your online grocery store with a variety of products to meet all your needs.</p>
+        </section>
+
+        <section id="products">
+            <h2>Our Products</h2>
+            <div class="product-gallery">
+                <!-- Example Product -->
+                <div class="product">
+                    <img src="product1.jpg" alt="Product 1">
+                    <h3>Product 1</h3>
+                    <p>Description of Product 1.</p>
+                    <p>Price: $10.00</p>
+                    <button onclick="addToCart(10)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="product2.jpg" alt="Product 2">
+                    <h3>Product 2</h3>
+                    <p>Description of Product 2.</p>
+                    <p>Price: $12.00</p>
+                    <button onclick="addToCart(12)">Add to Cart</button>
+                </div>
+                <!-- Add more products similarly -->
+            </div>
+        </section>
+
+        <section class="total-price">
+            <h2>Total Price</h2>
+            <p id="totalAmount">$0.00</p>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>For inquiries, please contact us at:</p>
+            <p>Phone: <strong>076-5549045</strong></p>
+            <p>Email: <strong>info@kulasinghestores.com</strong></p>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Kulasinghe Stores. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        let totalAmount = 0;
+
+        function addToCart(price) {
+            totalAmount += price;
+            document.getElementById('totalAmount').textContent = `$${totalAmount.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>
